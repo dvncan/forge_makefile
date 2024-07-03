@@ -1,4 +1,24 @@
-## Foundry
+# Simple forge w/ makefile
+
+The goal of this repo is to show how easy it is to use a makefile with your forge repo to set key values which would typically be passed in the command line
+
+## .env
+Please add the env file:
+```.env
+ENV=testnet
+NETWORK=sepolia
+
+RPC_URL=https://alchemy_rpc_url
+
+PRIVATE_KEY=0xsdsjdbsdjsbdjsbdsjdbsdjsbdskdwndew
+
+ETHERSCAN_API_KEY=WTKCFP13......
+
+contract=Counter.sol
+```
+
+
+## More on... Foundry
 
 **Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
 
