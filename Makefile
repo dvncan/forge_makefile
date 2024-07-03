@@ -2,16 +2,10 @@
 
 .PHONY: all test clean deploy-anvil
 
-all: clean remove install update build
+all: clean update build test snapshot remove install 
 
 # Clean the repo
 clean  :; forge clean
-
-# Remove modules
-remove :; rm -rf .gitmodules && rm -rf .git/modules/* && rm -rf lib && touch .gitmodules && git add . && git commit -m 'commit ${%y.%m.%d %H:%M:%S}'
-
-# Install libs for forge tests optional include --no-commit
-install :; forge install smartcontractkit/chainlink-brownie-contracts && forge install rari-capital/solmate && forge install foundry-rs/forge-std
 
 # Update Dependencies
 update:; forge update
@@ -21,6 +15,13 @@ build:; forge build
 test :; forge test 
 
 snapshot :; forge snapshot
+
+# Remove modules
+remove :; rm -rf .gitmodules && rm -rf .git/modules/* && rm -rf lib && touch .gitmodules && git add . && git commit -m 'commit ${%y.%m.%d %H:%M:%S}'
+
+# Install libs for forge tests optional include --no-commit
+install :; forge install smartcontractkit/chainlink-brownie-contracts && forge install rari-capital/solmate && forge install foundry-rs/forge-std
+
 
 # Optional slither
 # slither :; slither ./src 
