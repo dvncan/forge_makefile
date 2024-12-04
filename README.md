@@ -96,6 +96,10 @@ chmod +x parseSolidity.sh
 
 Replace json with sql or nosql to get the corresponding output format.
 
+### new typescript version 
+'run'
+ts-node parseSolidity.ts path/to/your/solidity-file.sol
+
 Explanation
 
 	•	solc: Used to generate the AST of the Solidity file.
