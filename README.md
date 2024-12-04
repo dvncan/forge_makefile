@@ -77,6 +77,36 @@ $ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --pri
 $ cast <subcommand>
 ```
 
+### database 
+Step 1: Install Dependencies
+
+Make sure you have solc and jq installed on your system. You can install them using the following commands:
+'''
+sudo apt-get update
+sudo apt-get install solc
+sudo apt-get install jq
+'''
+
+Usage
+
+To run the script, use the following command:
+
+chmod +x parseSolidity.sh
+./parseSolidity.sh path/to/your/solidity-file.sol json
+
+Replace json with sql or nosql to get the corresponding output format.
+
+Explanation
+
+	•	solc: Used to generate the AST of the Solidity file.
+	•	jq: Used to parse and manipulate the JSON AST.
+	•	solidity_type_to_db_type: Converts Solidity types to database types.
+	•	parse_solidity_struct: Parses Solidity struct definitions into table definitions.
+	•	parse_solidity_contract: Parses Solidity contract definitions into database definitions.
+	•	generate_json, generate_sql, generate_nosql: Functions to generate the desired output formats.
+
+This script should handle the basic conversion of Solidity structs and contract variables into appropriate database formats. You can extend it further to handle more complex scenarios and additional Solidity types as needed.
+
 ### Help
 
 ```shell
